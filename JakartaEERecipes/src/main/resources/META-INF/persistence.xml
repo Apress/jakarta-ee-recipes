@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Define Persistence Unit -->
+  <persistence-unit name="JakartaEERecipesPU">
+    <class>org.jakartaeerecipes.entity.Book</class>
+    <class>org.jakartaeerecipes.entity.BookAuthor</class>
+    <class>org.jakartaeerecipes.entity.Chapter</class>
+    <class>org.jakartaeerecipes.entity.Employee</class>
+    <class>org.jakartaeerecipes.entity.Jobs</class>
+    <class>org.jakartaeerecipes.converter.EmployeeStatusConverter</class>
+    <!-- Uncomment below for tilizing JDBC driver and data source -->
+    <!--properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+      <property name="javax.persistence.jdbc.user" value="acmeuser"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.password" value="password"/>
+    </properties-->
+    <!-- Uncomment below for utilizing application server container data source -->
+    <jta-data-source>jdbc/acmedb</jta-data-source>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  </persistence-unit>
+</persistence>
